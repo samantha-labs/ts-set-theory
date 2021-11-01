@@ -1,0 +1,331 @@
+<!DOCTYPE html><html class="default no-js"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>@neoncitylights/set-theory</title><meta name="description" content="Documentation for @neoncitylights/set-theory"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">@neoncitylights/set-theory</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>@neoncitylights/set-theory</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
+<a href="#neoncitylightsset-theory" id="neoncitylightsset-theory" style="color: inherit; text-decoration: none;">
+  <h1>@neoncitylights/set-theory</h1>
+</a>
+<p><a href="https://github.com/neoncitylights/ts-set-theory/blob/main/LICENSE.txt"><img src="https://img.shields.io/github/license/neoncitylights/ts-set-theory" alt="GitHub license"></a>
+<a href="https://badge.fury.io/js/@neoncitylights%2Fset-theory"><img src="https://badge.fury.io/js/@neoncitylights%2Fset-theory.svg" alt="npm version"></a>
+<a href="https://codecov.io/gh/neoncitylights/ts-set-theory"><img src="https://codecov.io/gh/neoncitylights/ts-set-theory/branch/main/graph/badge.svg?token=PmaGuYKnEo" alt="codecov"></a>
+<a href="https://github.com/neoncitylights/ts-set-theory/actions/workflows/main.yml"><img src="https://github.com/neoncitylights/ts-set-theory/actions/workflows/main.yml/badge.svg" alt="Node.js workflow"></a></p>
+<p>A library written in TypeScript implementing the mathematical branch known as set theory - a subset of discrete mathematics.</p>
+<p>While there is a current proposal for adding new methods to the Set class[^ecma-set-methods-proposal], it is not formally recommended yet. This library provides functions to coincide with the <code>Set</code> class[^mdn-set], as standardized by the <em>ECMAScript Language Specification</em>. [^ecma-spec].</p>
+
+<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+  <h2>Install</h2>
+</a>
+<pre><code class="language-bash"><span class="hl-2">npm install @neoncitylights/set-theory</span>
+</code></pre>
+
+<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+  <h2>Usage</h2>
+</a>
+<pre><code class="language-ts"><span class="hl-3">const</span><span class="hl-2"> </span><span class="hl-7">a</span><span class="hl-2"> = </span><span class="hl-3">new</span><span class="hl-2"> </span><span class="hl-4">Set</span><span class="hl-2">&lt;</span><span class="hl-4">number</span><span class="hl-2">&gt;([</span><span class="hl-5">1</span><span class="hl-2">, </span><span class="hl-5">2</span><span class="hl-2">, </span><span class="hl-5">3</span><span class="hl-2">, </span><span class="hl-5">4</span><span class="hl-2">]);</span><br/><span class="hl-3">const</span><span class="hl-2"> </span><span class="hl-7">b</span><span class="hl-2"> = </span><span class="hl-3">new</span><span class="hl-2"> </span><span class="hl-4">Set</span><span class="hl-2">&lt;</span><span class="hl-4">number</span><span class="hl-2">&gt;([</span><span class="hl-5">4</span><span class="hl-2">, </span><span class="hl-5">5</span><span class="hl-2">, </span><span class="hl-5">6</span><span class="hl-2">, </span><span class="hl-5">7</span><span class="hl-2">]);</span><br/><span class="hl-1">getIntersection</span><span class="hl-2">(</span><span class="hl-8">a</span><span class="hl-2">, </span><span class="hl-8">b</span><span class="hl-2">); </span><span class="hl-0">// new Set&lt;number&gt;([4])</span><br/><span class="hl-1">getUnion</span><span class="hl-2">(</span><span class="hl-8">a</span><span class="hl-2">, </span><span class="hl-8">b</span><span class="hl-2">); </span><span class="hl-0">// new Set&lt;number&gt;([1, 2, 3, 4, 5, 6, 7])</span><br/><br/><span class="hl-3">const</span><span class="hl-2"> </span><span class="hl-7">c</span><span class="hl-2"> = </span><span class="hl-3">new</span><span class="hl-2"> </span><span class="hl-4">Set</span><span class="hl-2">&lt;</span><span class="hl-4">string</span><span class="hl-2">&gt;([</span><span class="hl-6">&quot;hello&quot;</span><span class="hl-2">, </span><span class="hl-6">&quot;world&quot;</span><span class="hl-2">]);</span><br/><span class="hl-3">const</span><span class="hl-2"> </span><span class="hl-7">d</span><span class="hl-2"> = </span><span class="hl-3">new</span><span class="hl-2"> </span><span class="hl-4">Set</span><span class="hl-2">&lt;</span><span class="hl-4">string</span><span class="hl-2">&gt;([</span><span class="hl-6">&quot;hello&quot;</span><span class="hl-2">]);</span><br/><span class="hl-1">isSupersetOf</span><span class="hl-2">(</span><span class="hl-8">c</span><span class="hl-2">, </span><span class="hl-8">d</span><span class="hl-2">); </span><span class="hl-0">// true</span><br/><span class="hl-1">isSubsetOf</span><span class="hl-2">(</span><span class="hl-8">d</span><span class="hl-2">, </span><span class="hl-8">c</span><span class="hl-2">); </span><span class="hl-0">// true</span>
+</code></pre>
+
+<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+  <h2>Documentation</h2>
+</a>
+
+<a href="#api-reference" id="api-reference" style="color: inherit; text-decoration: none;">
+  <h3>API Reference</h3>
+</a>
+
+<a href="#predicates" id="predicates" style="color: inherit; text-decoration: none;">
+  <h4>Predicates</h4>
+</a>
+<ul>
+<li><a href="#areSetsDisjoint">#</a> predicates.<strong>areSetsDisjoint</strong>&lt;*TElement*&gt;(<em>a</em>, <em>b</em>): <em>boolean</em> • <a href="./src/predicates.ts">source</a></li>
+<li><a href="#areSetsEquivalent">#</a> predicates.<strong>areSetsEquivalent</strong>&lt;*TElement*&gt;(<em>a</em>, <em>b</em>): <em>boolean</em> • <a href="./src/predicates.ts">source</a></li>
+<li><a href="#areSetsEqual">#</a> predicates.<strong>areSetsEqual</strong>&lt;*TElement*&gt;(<em>a</em>, <em>b</em>): <em>boolean</em> • <a href="./src/predicates.ts">source</a></li>
+<li><a href="#isSubsetOf">#</a> predicates.<strong>isSubsetOf</strong>&lt;*TElement*&gt;(<em>a</em>, <em>b</em>): <em>boolean</em> • <a href="./src/predicates.ts">source</a></li>
+<li><a href="#isSupersetOf">#</a> predicates.<strong>isSupersetOf</strong>&lt;*TElement*&gt;(<em>a</em>, <em>b</em>): <em>boolean</em> • <a href="./src/predicates.ts">source</a></li>
+<li><a href="#isProperSubsetOf">#</a> predicates.<strong>isProperSubsetOf</strong>&lt;*TElement*&gt;(<em>a</em>, <em>b</em>): <em>boolean</em> • <a href="./src/predicates.ts">source</a></li>
+<li><a href="#isProperSupersetOf">#</a> predicates.<strong>isProperSupersetOf</strong>&lt;*TElement*&gt;(<em>a</em>, <em>b</em>): <em>boolean</em> • <a href="./src/predicates.ts">source</a></li>
+</ul>
+
+<a href="#operations" id="operations" style="color: inherit; text-decoration: none;">
+  <h4>Operations</h4>
+</a>
+<ul>
+<li><a href="#getUnion">#</a> operations.<strong>getUnion</strong>&lt;*TElement*&gt;(<em>a</em>, <em>b</em>): Set&lt;*TElement*&gt; • <a href="./src/operations.ts">source</a></li>
+<li><a href="#getIntersection">#</a> operations.<strong>getIntersection</strong>&lt;*TElement*&gt;(<em>a</em>, <em>b</em>): Set&lt;*TElement*&gt; • <a href="./src/operations.ts">source</a></li>
+<li><a href="#getDifference">#</a> operations.<strong>getDifference</strong>&lt;*TElement*&gt;(<em>a</em>, <em>b</em>): Set&lt;*TElement*&gt; • <a href="./src/operations.ts">source</a></li>
+<li><a href="#getSymmetricDifference">#</a> operations.<strong>getSymmetricDifference</strong>&lt;*TElement*&gt;(<em>a</em>, <em>b</em>): Set&lt;*TElement*&gt; • <a href="./src/operations.ts">source</a></li>
+</ul>
+
+<a href="#similarity-measuring-algorithms" id="similarity-measuring-algorithms" style="color: inherit; text-decoration: none;">
+  <h4>Similarity measuring algorithms</h4>
+</a>
+<ul>
+<li><a href="#getJaccardSimilarityCoefficient">#</a> similarity.<strong>getJaccardSimilarityCoefficient</strong>&lt;*TElement*&gt;(<em>a</em>, <em>b</em>): <em>number</em> • <a href="./src/similarity.ts">source</a></li>
+<li><a href="#getLogDice">#</a> similarity.<strong>getLogDice</strong>&lt;*TElement*&gt;(<em>a</em>, <em>b</em>): <em>number</em> • <a href="./src/similarity.ts">source</a></li>
+<li><a href="#getOverlapCoefficient">#</a> similarity.<strong>getOverlapCoefficient</strong>&lt;*TElement*&gt;(<em>a</em>, <em>b</em>): <em>number</em> • <a href="./src/similarity.ts">source</a></li>
+<li><a href="#getSorensenDiceCoefficient">#</a> similarity.<strong>getSorensenDiceCoefficient</strong>&lt;*TElement*&gt;(<em>a</em>, <em>b</em>): <em>number</em> • <a href="./src/similarity.ts">source</a></li>
+</ul>
+
+<a href="#types" id="types" style="color: inherit; text-decoration: none;">
+  <h4>Types</h4>
+</a>
+<p>This library provides <a href="./src/types.ts">generic types</a> for describing different types of set functions via:</p>
+<ul>
+<li><strong>SetFunction</strong>&lt;*TElement*&gt;</li>
+<li><strong>SetOperation</strong>&lt;*TElement*&gt;</li>
+<li><strong>SetPredicate</strong>&lt;*TElement*&gt;</li>
+<li><strong>SetSimilarity</strong>&lt;*TElement*&gt;</li>
+</ul>
+
+<a href="#set-theory-101" id="set-theory-101" style="color: inherit; text-decoration: none;">
+  <h3>Set Theory 101</h3>
+</a>
+
+<a href="#set" id="set" style="color: inherit; text-decoration: none;">
+  <h4>Set</h4>
+</a>
+<p>A <strong>set</strong> is an unordered collection of unique elements. The type of elements can be anything, such as words, numbers, and even other sets. In math, the name of sets are usually denoted with a capital letter, like A, B, C, etc. They can be expressed in namely 2 different notations being &quot;<strong>Roster notation</strong>&quot; and &quot;<strong>Set-Builder notation</strong>&quot;.</p>
+
+<a href="#roster-notation" id="roster-notation" style="color: inherit; text-decoration: none;">
+  <h4>Roster notation</h4>
+</a>
+<p>Sets are written with curly brackets at the start and end, and each element is separated by a comma.</p>
+<pre><code class="language-text">A = {1, 2, 3, 4}
+</code></pre>
+<p>For expressing larger, finite sets, we can use an ellipsis in-between. They can also be at the beginning or end to indicate that the set is infinite.</p>
+<pre><code><span class="hl-7">B</span><span class="hl-2"> = {</span><span class="hl-5">1</span><span class="hl-2">, </span><span class="hl-5">2</span><span class="hl-2">, </span><span class="hl-5">3</span><span class="hl-2">, …, </span><span class="hl-5">100</span><span class="hl-2">}</span><br/><span class="hl-7">C</span><span class="hl-2"> = {</span><span class="hl-5">1</span><span class="hl-2">, </span><span class="hl-5">3</span><span class="hl-2">, </span><span class="hl-5">5</span><span class="hl-2">, </span><span class="hl-5">7</span><span class="hl-2">, </span><span class="hl-5">9</span><span class="hl-2">, …}</span>
+</code></pre>
+
+<a href="#set-builder-notation" id="set-builder-notation" style="color: inherit; text-decoration: none;">
+  <h4>Set-builder notation</h4>
+</a>
+<p>Sets are written by defining a variable, and declaring a predicate (a statement that must be true or false) for that variable.
+For example, to express <code>{0, 1, 2, 3, …, 10}</code> in set-builder notation:</p>
+<pre><code class="language-text">{x|x ∈ ℤ &amp; 0 ≤ x ≤ 10}
+</code></pre>
+<p>To express <code>{1, 3, 5, 7, 9, …}</code> in set-builder notation:</p>
+<pre><code><span class="hl-2">{</span><span class="hl-8">x</span><span class="hl-2">|</span><span class="hl-8">x</span><span class="hl-2"> = </span><span class="hl-8">x</span><span class="hl-2"> + </span><span class="hl-5">2</span><span class="hl-2">, </span><span class="hl-5">1</span><span class="hl-2"> ≤ </span><span class="hl-8">x</span><span class="hl-2"> ≤ ∞}</span>
+</code></pre>
+<p>Compared to roster notation, set-builder notation is a way of more <em>rigorously</em>[^rigour-wiki] defining a set. However, it is important to note that depending on the audience, it can be less accessible to readers.</p>
+
+<a href="#cardinality" id="cardinality" style="color: inherit; text-decoration: none;">
+  <h4>Cardinality</h4>
+</a>
+<p><strong>Cardinality</strong> is the formal term that represents the number of elements within a set. It is also known as the &quot;<em>size</em>&quot; of the element. Given a set named A, the cardinality can be expressed using pipes, via |A|.</p>
+<pre><code class="language-text"> A = {hello, world}
+|A| = 2
+</code></pre>
+
+<a href="#disjoint-sets" id="disjoint-sets" style="color: inherit; text-decoration: none;">
+  <h4>Disjoint sets</h4>
+</a>
+<p><strong>Disjoint sets</strong> are sets that have no elements in common. Given two sets named A and B, they are formally expressed as <code>A ∩ B = ϕ</code>.</p>
+<pre><code class="language-text">A = {1, 2, 3, 4}
+B = {5, 6, 7, 8}
+A ∩ B = ϕ
+</code></pre>
+
+<a href="#equivalent-sets" id="equivalent-sets" style="color: inherit; text-decoration: none;">
+  <h4>Equivalent sets</h4>
+</a>
+<p><strong>Equivalent sets</strong> are two sets that have the same cardinality.</p>
+<pre><code class="language-text"> A = {5, 6, 7, 8, 9, 10}
+ B = {11, 12, 13, 14, 15, 16}
+|A| = |B|
+</code></pre>
+
+<a href="#equal-sets" id="equal-sets" style="color: inherit; text-decoration: none;">
+  <h4>Equal sets</h4>
+</a>
+<p><strong>Equal sets</strong> are sets that have the same cardinality <em>and</em> the same elements.</p>
+<pre><code class="language-text">A = {1, 2, 3, 4, 5}
+B = {1, 2, 3, 4, 5}
+A = B
+</code></pre>
+
+<a href="#subset" id="subset" style="color: inherit; text-decoration: none;">
+  <h4>Subset</h4>
+</a>
+<p>A <strong>subset</strong> is a set where all elements of set A are in set B.</p>
+<pre><code class="language-text">A = {1, 2, 3}
+B = {1, 2, 3, 4, 5}
+A ⊆ B
+</code></pre>
+
+<a href="#superset" id="superset" style="color: inherit; text-decoration: none;">
+  <h4>Superset</h4>
+</a>
+<p>A <strong>superset</strong> is a set where all elements of B are in set A.</p>
+<pre><code class="language-text">A = {4, 5, 6}
+B = {5, 6, 7, 8, 9}
+B ⊇ A
+</code></pre>
+
+<a href="#proper-subset" id="proper-subset" style="color: inherit; text-decoration: none;">
+  <h4>Proper subset</h4>
+</a>
+<p>A <strong>proper subset</strong> is when set A is a subset of B, but A ≠ B.</p>
+<pre><code class="language-text">{1} ⊂ {1, 3}
+</code></pre>
+
+<a href="#proper-superset" id="proper-superset" style="color: inherit; text-decoration: none;">
+  <h4>Proper superset</h4>
+</a>
+<p>A <strong>proper superset</strong> is when set A is a superset of B, but A ≠ B.</p>
+<pre><code class="language-text">{2, 3, 9} ⊃ {3, 9}
+</code></pre>
+
+<a href="#intersection" id="intersection" style="color: inherit; text-decoration: none;">
+  <h4>Intersection</h4>
+</a>
+<p>The <strong>intersection</strong> is the set of elements that are the members of two sets.</p>
+<pre><code class="language-text">A = {1, 2, 3, 4, 5}
+B = {3, 4, 5, 6, 7}
+A ∩ B = {3, 4, 5}
+</code></pre>
+
+<a href="#union" id="union" style="color: inherit; text-decoration: none;">
+  <h4>Union</h4>
+</a>
+<p>The <strong>union</strong> is the set of all elements in a collection of sets.</p>
+<pre><code class="language-text">A = {1, 2, 3, 4}
+B = {4, 5, 6, 7, 8}
+A ∪ B = {1, 2, 3, 4, 5, 6, 7, 8}
+</code></pre>
+
+<a href="#difference" id="difference" style="color: inherit; text-decoration: none;">
+  <h4>Difference</h4>
+</a>
+<p>The <strong>difference</strong> (also known as the complement) is the set of all elements that are in set A that are not in set B.</p>
+<pre><code class="language-text">A = {1, 2, 3, 4}
+B = {2, 3, 5, 6}
+A \ B = {1, 4}
+</code></pre>
+
+<a href="#symmetric-difference" id="symmetric-difference" style="color: inherit; text-decoration: none;">
+  <h4>Symmetric difference</h4>
+</a>
+<p>The <strong>symmetric difference</strong> is the set that belongs to one but not both of two sets.</p>
+<pre><code class="language-text">A = {2, 4, 5, 8}
+B = {2, 6, 7, 8}
+A △ B = {4, 5, 6, 7}
+</code></pre>
+
+<a href="#symbols" id="symbols" style="color: inherit; text-decoration: none;">
+  <h3>Symbols</h3>
+</a>
+<table>
+<thead>
+<tr>
+<th>Character</th>
+<th>Code point</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>⊆</code></td>
+<td><code>U+2286</code></td>
+<td>Subset</td>
+</tr>
+<tr>
+<td><code>⊇</code></td>
+<td><code>U+2287</code></td>
+<td>Superset</td>
+</tr>
+<tr>
+<td><code>⊂</code></td>
+<td><code>U+2282</code></td>
+<td>Proper subset</td>
+</tr>
+<tr>
+<td><code>⊃</code></td>
+<td><code>U+2283</code></td>
+<td>Proper superset</td>
+</tr>
+<tr>
+<td><code>∅</code></td>
+<td><code>U+03D5</code></td>
+<td>Empty set</td>
+</tr>
+<tr>
+<td><code>∈</code></td>
+<td><code>U+2208</code></td>
+<td>Element of</td>
+</tr>
+<tr>
+<td><code>∉</code></td>
+<td><code>U+2209</code></td>
+<td>Not element of</td>
+</tr>
+<tr>
+<td><code>∩</code></td>
+<td><code>U+2229</code></td>
+<td>Intersection</td>
+</tr>
+<tr>
+<td><code>∪</code></td>
+<td><code>U+222A</code></td>
+<td>Union</td>
+</tr>
+<tr>
+<td><code>\</code></td>
+<td><code>U+005C</code></td>
+<td>Complement/difference</td>
+</tr>
+<tr>
+<td><code>△</code></td>
+<td><code>U+25B3</code></td>
+<td>Symmetric difference</td>
+</tr>
+<tr>
+<td><code>⊖</code></td>
+<td><code>U+2296</code></td>
+<td>Symmetric difference</td>
+</tr>
+<tr>
+<td><code>×</code></td>
+<td><code>U+00D7</code></td>
+<td>Cartesian product</td>
+</tr>
+<tr>
+<td><code>ℕ</code></td>
+<td><code>U+2115</code></td>
+<td>Set of all natural numbers</td>
+</tr>
+<tr>
+<td><code>𝕎</code></td>
+<td><code>U+1D54E</code></td>
+<td>Set of all whole numbers</td>
+</tr>
+<tr>
+<td><code>ℤ</code></td>
+<td><code>U+2124</code></td>
+<td>Set of all integer numbers</td>
+</tr>
+<tr>
+<td><code>ℚ</code></td>
+<td><code>U+211A</code></td>
+<td>Set of all rational numbers</td>
+</tr>
+<tr>
+<td><code>𝔽</code></td>
+<td><code>U+1D53D</code></td>
+<td>Set of all irrational numbers</td>
+</tr>
+<tr>
+<td><code>ℝ</code></td>
+<td><code>U+211D</code></td>
+<td>Set of all real numbers</td>
+</tr>
+<tr>
+<td><code>ℂ</code></td>
+<td><code>U+2102</code></td>
+<td>Set of all complex numbers</td>
+</tr>
+</tbody></table>
+
+<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+  <h2>License</h2>
+</a>
+<p>This library is licensed under the <a href="./LICENSE">MIT License</a>.</p>
+<p>[^mdn-set]: MDN Web Docs Contributors. (n.d.). Set - javascript: MDN. JavaScript | MDN. Retrieved November 1, 2021, from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set</a>. 
+[^ecma-spec]: TC39. (2021, October 30). Draft ECMA-262 / October 30, 2021. ECMAScript® 2022 Language&nbsp;Specification. Retrieved November 1, 2021, from <a href="https://tc39.es/ecma262/#sec-set-objects">https://tc39.es/ecma262/#sec-set-objects</a>. 
+[^ecma-set-methods-proposal]: Wadas, M., &amp; Gunasekaran, S. (n.d.). New Set methods. New set methods. Retrieved November 1, 2021, from <a href="https://tc39.es/proposal-set-methods/">https://tc39.es/proposal-set-methods/</a>. 
+[^rigour-wiki]: Wikipedia contributors. (2021, November 1). Rigour. In Wikipedia, The Free Encyclopedia. Retrieved 17:24, November 1, 2021, from <a href="https://en.wikipedia.org/w/index.php?title=Rigour&amp;oldid=1053055627">https://en.wikipedia.org/w/index.php?title=Rigour&amp;oldid=1053055627</a></p>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#SetFunction" class="tsd-kind-icon">Set<wbr/>Function</a></li><li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#SetOperation" class="tsd-kind-icon">Set<wbr/>Operation</a></li><li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#SetPredicate" class="tsd-kind-icon">Set<wbr/>Predicate</a></li><li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#SetSimilarity" class="tsd-kind-icon">Set<wbr/>Similarity</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#areSetsDisjoint" class="tsd-kind-icon">are<wbr/>Sets<wbr/>Disjoint</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#areSetsEqual" class="tsd-kind-icon">are<wbr/>Sets<wbr/>Equal</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#areSetsEquivalent" class="tsd-kind-icon">are<wbr/>Sets<wbr/>Equivalent</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#getDifference" class="tsd-kind-icon">get<wbr/>Difference</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#getIntersection" class="tsd-kind-icon">get<wbr/>Intersection</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#getJaccardSimilarityCoefficient" class="tsd-kind-icon">get<wbr/>Jaccard<wbr/>Similarity<wbr/>Coefficient</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#getLogDice" class="tsd-kind-icon">get<wbr/>Log<wbr/>Dice</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#getOverlapCoefficient" class="tsd-kind-icon">get<wbr/>Overlap<wbr/>Coefficient</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#getSorensenDiceCoefficient" class="tsd-kind-icon">get<wbr/>Sorensen<wbr/>Dice<wbr/>Coefficient</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#getSymmetricDifference" class="tsd-kind-icon">get<wbr/>Symmetric<wbr/>Difference</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#getUnion" class="tsd-kind-icon">get<wbr/>Union</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#isProperSubsetOf" class="tsd-kind-icon">is<wbr/>Proper<wbr/>Subset<wbr/>Of</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#isProperSupersetOf" class="tsd-kind-icon">is<wbr/>Proper<wbr/>Superset<wbr/>Of</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#isSubsetOf" class="tsd-kind-icon">is<wbr/>Subset<wbr/>Of</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#isSupersetOf" class="tsd-kind-icon">is<wbr/>Superset<wbr/>Of</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
