@@ -82,132 +82,165 @@
 <a href="#set" id="set" style="color: inherit; text-decoration: none;">
   <h4>Set</h4>
 </a>
-<p>A <strong>set</strong> is an unordered collection of unique elements. The type of elements can be anything, such as words, numbers, and even other sets. In math, the name of sets are usually denoted with a capital letter, like A, B, C, etc. They can be expressed in namely 2 different notations being &quot;<strong>Roster notation</strong>&quot; and &quot;<strong>Set-Builder notation</strong>&quot;.</p>
+<p>A <strong>set</strong> is an unordered collection of unique elements. The type of elements can be anything, such as words, numbers, and even other sets. In math, the name of sets are usually denoted with a capital letter, like $A$, $B$, $C$, etc. They can be expressed in namely 2 different notations being &quot;<strong>Roster notation</strong>&quot; and &quot;<strong>Set-Builder notation</strong>&quot;.</p>
 
 <a href="#roster-notation" id="roster-notation" style="color: inherit; text-decoration: none;">
   <h4>Roster notation</h4>
 </a>
-<p>Sets are written with curly brackets at the start and end, and each element is separated by a comma.</p>
-<pre><code class="language-text">A = {1, 2, 3, 4}
-</code></pre>
+<p>Sets are written with curly brackets at the start and end, and each element is separated by a comma.
+$$A = \{1, 2, 3, 4\}$$</p>
 <p>For expressing larger, finite sets, we can use an ellipsis in-between. They can also be at the beginning or end to indicate that the set is infinite.</p>
-<pre><code><span class="hl-4">B</span><span class="hl-2"> </span><span class="hl-3">=</span><span class="hl-2"> {</span><span class="hl-4">1</span><span class="hl-2">, </span><span class="hl-4">2</span><span class="hl-2">, </span><span class="hl-4">3</span><span class="hl-2">, …, </span><span class="hl-4">100</span><span class="hl-2">}</span><br/><span class="hl-4">C</span><span class="hl-2"> </span><span class="hl-3">=</span><span class="hl-2"> {</span><span class="hl-4">1</span><span class="hl-2">, </span><span class="hl-4">3</span><span class="hl-2">, </span><span class="hl-4">5</span><span class="hl-2">, </span><span class="hl-4">7</span><span class="hl-2">, </span><span class="hl-4">9</span><span class="hl-2">, …}</span>
-</code></pre>
+<p>$$
+\begin{aligned}
+B &amp;= \{ 1, 2, 3, \dots, 100 \} \
+C &amp;= \{ 1, 3, 5, 7, 9, \dots \}
+\end{aligned}
+$$</p>
 
 <a href="#set-builder-notation" id="set-builder-notation" style="color: inherit; text-decoration: none;">
   <h4>Set-builder notation</h4>
 </a>
 <p>Sets are written by defining a variable, and declaring a predicate (a statement that must be true or false) for that variable.
-For example, to express <code>{0, 1, 2, 3, …, 10}</code> in set-builder notation:</p>
-<pre><code class="language-text">{x|x ∈ ℤ &amp; 0 ≤ x ≤ 10}
-</code></pre>
-<p>To express <code>{1, 3, 5, 7, 9, …}</code> in set-builder notation:</p>
-<pre><code><span class="hl-2">{x</span><span class="hl-3">|</span><span class="hl-2">x </span><span class="hl-3">=</span><span class="hl-2"> x </span><span class="hl-3">+</span><span class="hl-2"> </span><span class="hl-4">2</span><span class="hl-2">, </span><span class="hl-4">1</span><span class="hl-2"> ≤ x ≤ ∞}</span>
-</code></pre>
+For example, to express $\{ 0, 1, 2, 3, \dots, 10 \}$ in set-builder notation:</p>
+<p>$$\{ x|x \in \mathbb{Z} \land 0 \leq x \leq 10 \}$$</p>
+<p>To express $\{ 1, 3, 5, 7, 9, \dots \}$ in set-builder notation:</p>
+<p>$$\{ x| x_n = n + 2, 1 \le x \le \infty \}$$</p>
 <p>Compared to roster notation, set-builder notation is a way of more <em>rigorously</em>[^rigour-wiki] defining a set. However, it is important to note that depending on the audience, it can be less accessible to readers.</p>
 
 <a href="#cardinality" id="cardinality" style="color: inherit; text-decoration: none;">
   <h4>Cardinality</h4>
 </a>
-<p><strong>Cardinality</strong> is the formal term that represents the number of elements within a set. It is also known as the &quot;<em>size</em>&quot; of the element. Given a set named A, the cardinality can be expressed using pipes, via |A|.</p>
-<pre><code class="language-text"> A = {hello, world}
-|A| = 2
-</code></pre>
+<p><strong>Cardinality</strong> is the formal term that represents the number of elements within a set. It is also known as the &quot;<em>size</em>&quot; of the element. Given a set named $A$, the cardinality can be expressed using pipes, via $|A|$.</p>
+<p>$$
+\begin{aligned}
+A &amp;= \{ \text{hello}, \text{world} \} \
+|A| &amp;= 2
+\end{aligned}
+$$</p>
 
 <a href="#disjoint-sets" id="disjoint-sets" style="color: inherit; text-decoration: none;">
   <h4>Disjoint sets</h4>
 </a>
-<p><strong>Disjoint sets</strong> are sets that have no elements in common. Given two sets named A and B, they are formally expressed as <code>A ∩ B = ϕ</code>.</p>
-<pre><code class="language-text">A = {1, 2, 3, 4}
-B = {5, 6, 7, 8}
-A ∩ B = ϕ
-</code></pre>
+<p><strong>Disjoint sets</strong> are sets that have no elements in common. Given two sets named $A$ and $B$, they are formally expressed as $A \cap B = \Phi$.</p>
+<p>$$
+\begin{aligned}
+A &amp;= \{ 1, 2, 3, 4 \} \
+B &amp;= \{ 5, 6, 7, 8 \} \
+A \cap B &amp;= \Phi
+\end{aligned}
+$$</p>
 
 <a href="#equivalent-sets" id="equivalent-sets" style="color: inherit; text-decoration: none;">
   <h4>Equivalent sets</h4>
 </a>
 <p><strong>Equivalent sets</strong> are two sets that have the same cardinality.</p>
-<pre><code class="language-text"> A = {5, 6, 7, 8, 9, 10}
- B = {11, 12, 13, 14, 15, 16}
-|A| = |B|
-</code></pre>
+<p>$$
+\begin{aligned}
+A &amp;= \{ 5, 6, 7, 8, 9, 10 \} \
+B &amp;= \{ 11, 12, 13, 14, 15, 16 \} \
+|A| &amp;= |B|
+\end{aligned}
+$$</p>
 
 <a href="#equal-sets" id="equal-sets" style="color: inherit; text-decoration: none;">
   <h4>Equal sets</h4>
 </a>
 <p><strong>Equal sets</strong> are sets that have the same cardinality <em>and</em> the same elements.</p>
-<pre><code class="language-text">A = {1, 2, 3, 4, 5}
-B = {1, 2, 3, 4, 5}
-A = B
-</code></pre>
+<p>$$
+\begin{aligned}
+A &amp;= \{ 1, 2, 3, 4, 5 \} \
+B &amp;= \{ 1, 2, 3, 4, 5 \} \
+A &amp;= B
+\end{aligned}
+$$</p>
 
 <a href="#subset" id="subset" style="color: inherit; text-decoration: none;">
   <h4>Subset</h4>
 </a>
-<p>A <strong>subset</strong> is a set where all elements of set A are in set B.</p>
-<pre><code class="language-text">A = {1, 2, 3}
-B = {1, 2, 3, 4, 5}
-A ⊆ B
-</code></pre>
+<p>A <strong>subset</strong> is a set where all elements of set $A$ are in set $B$.</p>
+<p>$$
+\begin{aligned}
+A &amp;= \{ 1, 2, 3 \} \
+B &amp;= \{ 1, 2, 3, 4, 5 \} \
+A &amp;\subseteq B
+\end{aligned}
+$$</p>
 
 <a href="#superset" id="superset" style="color: inherit; text-decoration: none;">
   <h4>Superset</h4>
 </a>
-<p>A <strong>superset</strong> is a set where all elements of B are in set A.</p>
-<pre><code class="language-text">A = {4, 5, 6}
-B = {5, 6, 7, 8, 9}
-B ⊇ A
-</code></pre>
+<p>A <strong>superset</strong> is a set where all elements of $B$ are in set $A$.</p>
+<p>$$
+\begin{aligned}
+A &amp;= \{ 4, 5, 6 \} \
+B &amp;= \{ 5, 6, 7, 8, 9 \} \
+B &amp;\supseteq A
+\end{aligned}
+$$</p>
 
 <a href="#proper-subset" id="proper-subset" style="color: inherit; text-decoration: none;">
   <h4>Proper subset</h4>
 </a>
-<p>A <strong>proper subset</strong> is when set A is a subset of B, but A ≠ B.</p>
-<pre><code class="language-text">{1} ⊂ {1, 3}
-</code></pre>
+<p>A <strong>proper subset</strong> is when set $A$ is a subset of $B$, but $A \neq B$.</p>
+<p>$$
+\{ 1 \} \subset \{ 1, 3 \}
+$$</p>
 
 <a href="#proper-superset" id="proper-superset" style="color: inherit; text-decoration: none;">
   <h4>Proper superset</h4>
 </a>
-<p>A <strong>proper superset</strong> is when set A is a superset of B, but A ≠ B.</p>
-<pre><code class="language-text">{2, 3, 9} ⊃ {3, 9}
-</code></pre>
+<p>A <strong>proper superset</strong> is when set $A$ is a superset of $B$, but $A \neq B$.</p>
+<p>$$
+\{ 2, 3, 9 \} \supset \{ 3, 9 \}
+$$</p>
 
 <a href="#intersection" id="intersection" style="color: inherit; text-decoration: none;">
   <h4>Intersection</h4>
 </a>
 <p>The <strong>intersection</strong> is the set of elements that are the members of two sets.</p>
-<pre><code class="language-text">A = {1, 2, 3, 4, 5}
-B = {3, 4, 5, 6, 7}
-A ∩ B = {3, 4, 5}
-</code></pre>
+<p>$$
+\begin{aligned}
+A &amp;= \{ 1, 2, 3, 4, 5 \} \
+B &amp;= \{ 3, 4, 5, 6, 7 \} \
+A \cap B &amp;= \{ 3, 4, 5 \}
+\end{aligned}
+$$</p>
 
 <a href="#union" id="union" style="color: inherit; text-decoration: none;">
   <h4>Union</h4>
 </a>
 <p>The <strong>union</strong> is the set of all elements in a collection of sets.</p>
-<pre><code class="language-text">A = {1, 2, 3, 4}
-B = {4, 5, 6, 7, 8}
-A ∪ B = {1, 2, 3, 4, 5, 6, 7, 8}
-</code></pre>
+<p>$$
+\begin{aligned}
+A &amp;= \{ 1, 2, 3, 4 \} \
+B &amp;= \{ 4, 5, 6, 7, 8 \} \
+A \cup B &amp;= \{1, 2, 3, 4, 5, 6, 7, 8 \}
+\end{aligned}
+$$</p>
 
 <a href="#difference" id="difference" style="color: inherit; text-decoration: none;">
   <h4>Difference</h4>
 </a>
 <p>The <strong>difference</strong> (also known as the complement) is the set of all elements that are in set A that are not in set B.</p>
-<pre><code class="language-text">A = {1, 2, 3, 4}
-B = {2, 3, 5, 6}
-A \ B = {1, 4}
-</code></pre>
+<p>$$
+\begin{aligned}
+A &amp;= \{ 1, 2, 3, 4 \} \
+B &amp;= \{ 2, 3, 5, 6 \} \
+A \setminus B &amp;= \{ 1, 4 \}
+\end{aligned}
+$$</p>
 
 <a href="#symmetric-difference" id="symmetric-difference" style="color: inherit; text-decoration: none;">
   <h4>Symmetric difference</h4>
 </a>
 <p>The <strong>symmetric difference</strong> is the set that belongs to one but not both of two sets.</p>
-<pre><code class="language-text">A = {2, 4, 5, 8}
-B = {2, 6, 7, 8}
-A △ B = {4, 5, 6, 7}
-</code></pre>
+<p>$$
+\begin{aligned}
+A &amp;= \{ 2, 4, 5, 8 \} \
+B &amp;= \{ 2, 6, 7, 8 \} \
+A ~\Delta ~ B &amp;= \{ 4, 5, 6, 7 \}
+\end{aligned}
+$$</p>
 
 <a href="#symbols" id="symbols" style="color: inherit; text-decoration: none;">
   <h3>Symbols</h3>
